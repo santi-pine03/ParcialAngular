@@ -1,15 +1,13 @@
-<div class="container">
-        <strong>{{ conferenciaDetail.starts}} - {{ conferenciaDetail.ends}}, {{ conferenciaDetail.venue }}</strong>
-  <p class="h3 p-2">{{ conferenciaDetail.name }}</p>
-  <div class="row">
-    <div class="col-1">
-      <div class="thumb">
+<div class="container mt-3">
+  <div class="card p-3 border shadow-sm">
+    <strong>{{ conferenciaDetail.starts }} - {{ conferenciaDetail.ends }}, <span>{{ conferenciaDetail.venue }}</span></strong>
+    <p>{{ conferenciaDetail.name }}</p>
+    <div>
+      <div class="col">
+        <dl>
+          <dd>{{ conferenciaDetail.description }}</dd>
+        </dl>
       </div>
     </div>
-    <div class="col">
-      <dl>
-        <dd>{{ conferenciaDetail.description }}</dd>
-      </dl>
-    </div>
   </div>
- </div>
+</div>
