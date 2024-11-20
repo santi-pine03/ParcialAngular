@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Conferencia } from '../conferencia';
+import { ConferenciaService } from '../conferencia.service';
 
 @Component({
   selector: 'app-conferencia-list',
@@ -9,9 +10,17 @@ import { Conferencia } from '../conferencia';
 export class ConferenciaListComponent implements OnInit {
 
   conferencias : Array<Conferencia> =[];
-  constructor() { }
+  constructor(private conferenciaService: ConferenciaService) { }
+
+  getConferencias():void{
+    this.conferenciaService.getConferencias().subscribe((conferencias) =>{
+      this.conferencias = conferencias;
+
+    });
+  }
 
   ngOnInit() {
+    this.getConferencias();
   }
 
 }

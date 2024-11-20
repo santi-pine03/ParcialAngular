@@ -7,7 +7,7 @@ export class Conferencia {
     venue: string;
     description: string;
 
-    constructor(id: number,
+    public constructor(id: number,
         name: string,
         starts: string,
         ends: string,

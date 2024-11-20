@@ -12,4 +12,8 @@ export class ConferenciaService {
   private apiUrl = environment.baseUrl + 'conferences.json';
   constructor(private http: HttpClient) { }
 
+  getConferencias(): Observable<Conferencia[]>{
+    return this.http.get<Conferencia[]>(this.apiUrl)
+  }
+
 }
