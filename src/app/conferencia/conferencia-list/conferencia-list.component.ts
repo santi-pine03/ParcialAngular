@@ -9,6 +9,8 @@ import { ConferenciaService } from '../conferencia.service';
 })
 export class ConferenciaListComponent implements OnInit {
 
+  selectedConferencia!: Conferencia;
+  selected: Boolean = false;
   conferencias : Array<Conferencia> =[];
   constructor(private conferenciaService: ConferenciaService) { }
 
@@ -19,6 +21,10 @@ export class ConferenciaListComponent implements OnInit {
     });
   }
 
+  onSelected(conferencia: Conferencia): void{
+    this.selected = true;
+    this.selectedConferencia = conferencia;
+  }
   ngOnInit() {
     this.getConferencias();
   }

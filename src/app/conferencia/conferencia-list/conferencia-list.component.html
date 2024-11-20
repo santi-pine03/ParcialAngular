@@ -1,10 +1,11 @@
-<div class="header-full-width bg-info text-black">
-  <h5 class="mb-0 text-left">Upcoming conferences</h5>
-</div>
 <div class="container mt-4">
   <div class="card">
+    <div class="header bg-info text-white p-2">
+      <h5 class="mb-0 text-left">Upcoming conferences</h5>
+    </div>
+
     <div class="row">
-      <div class="col">
+      <div class="col-md-6">
         <div class="table-responsive">
           <table class="table table-striped table-bordered">
             <thead class="thead-light">
@@ -18,7 +19,7 @@
             <tbody>
               <tr *ngFor="let conferencia of conferencias">
                 <td>{{ conferencia.id }}</td>
-                <td><a href="#">{{ conferencia.name }}</a></td>
+                <td (click)="onSelected(conferencia)"><a href="#">{{ conferencia.name }}</a></td>
                 <td>{{ conferencia.starts }}</td>
                 <td>{{ conferencia.ends }}</td>
               </tr>
@@ -26,6 +27,10 @@
           </table>
         </div>
       </div>
+      <div class="col-md-6" *ngIf="selected">
+        <app-conferencia-detail [conferenciaDetail]="selectedConferencia"></app-conferencia-detail>
+      </div>
     </div>
   </div>
 </div>
+
